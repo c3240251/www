@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人口の多い国ランキング</title>
+</head>
+<body>
+  <h1>人口の多い国ランキング</h1>  
+  <ol id="countryList">
+    <li>中国</li>
+    <li>インド</li>
+    <li>アメリカ</li>
+    <li>インドネシア</li>
+  </ol>
+
+  <button onclick="showFlags()">国旗で表示</button>
+
+  <script>
+    function showFlags(){
+        let listItem = document.querySelectorAll("#countryList Li");
+        let flags = [
+            "flag_CHN.png",
+            "flag_IND.png",
+            "flag_USA.png",
+            "flag_IDN.png",       
+        ];
+        for (let i = 0; i < listItems.length; i++){
+            listItem[i].innerHTML = '<img scr="${flags[i]}" alt="">';
+        }
+    }
+  </script>
+</body>
+</html>
