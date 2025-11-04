@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>写真の一覧</title>
+<style>
+   body {
+     font-family: "游ゴシック", sans-serif;
+     text-align: center;
+   }
+   #photo-area {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 20px;
+   }
+   #photo-area img {
+     width: 300px;
+     height: auto;
+   }
+</style>
+</head>
+<body>
+<h1>写真の一覧</h1>
+<p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+<button id="show-btn">写真を表示</button>
+<div id="photo-area"></div>
+<script>
+   document.getElementById("show-btn").addEventListener("click", function() {
+     const photoArea = document.getElementById("photo-area");
+     const photos = [
+       "photo_1.jpg", "photo_2.jpg", "photo_3.jpg", "photo_4.jpg",
+       "photo_5.jpg", "photo_6.jpg", "photo_7.jpg", "photo_8.jpg"
+     ];
+     photos.forEach(function(src) {
+       const img = document.createElement("img");
+       img.src = src;
+       photoArea.appendChild(img);
+     });
+     // ボタンを削除
+     this.remove();
+   });
+</script>
+</body>
+</html>
