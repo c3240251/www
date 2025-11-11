@@ -32,8 +32,8 @@
        "photo_1.jpg", "photo_2.jpg", "photo_3.jpg", "photo_4.jpg",
        "photo_5.jpg", "photo_6.jpg", "photo_7.jpg", "photo_8.jpg"
      ];
-     const html = photos.map(scr => `<img scr="${scr}">`)
-     document.getElementById("photo-area").insertAdjacentHTML("beforebegin",html);
+     const html = photos.map(src => `<img scr="${src}">`).join("");
+     document.getElementById("photo-area").insertAdjacentHTML("beforeend",html);
      this.remove();
    });
 </script>
