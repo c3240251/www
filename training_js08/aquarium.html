@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>水族館 入場料の一覧</title>
+<style>
+
+  body {
+
+    font-family: "游ゴシック", sans-serif;
+
+    text-align: center;
+
+    margin: 40px;
+
+    background-color: #eaf8ff;
+
+  }
+
+  table {
+
+    border-collapse: collapse;
+
+    margin: 0 auto;
+
+    width: 70%;
+
+    background-color: #ffffff;
+
+  }
+
+  th, td {
+
+    border: 1px solid #555;
+
+    padding: 10px 20px;
+
+  }
+
+  th {
+
+    background-color: #b3e5fc;
+
+  }
+
+  caption {
+
+    font-size: 1.6em;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+    color: #0277bd;
+
+  }
+</style>
+</head>
+<body>
+<table id="price-table">
+<caption>水族館 入場料の一覧</caption>
+</table>
+<script>
+
+  const pricePerPerson = {
+
+    大人: 1200,
+
+    高校生: 900,
+
+    中学生: 700,
+
+    小学生: 500,
+
+    幼児: 300
+
+  };
+
+  const maxPeople = 5; 
+
+
+  const table = document.getElementById("price-table");
+
+
+  let html = `
+<tr>
+<th>人数</th>
+
+      ${Object.keys(pricePerPerson).map(role => `<th>${role}</th>`).join('')}
+</tr>
+
+  `;
+
+
+  for (let i = 1; i <= maxPeople; i++) {
+
+    html += `
+<tr>
+<th>${i}人</th>
+
+        ${Object.values(pricePerPerson).map(price => `<td>${price * i}円</td>`).join('')}
+</tr>
+
+    `;
+
+  }
+
+  table.insertAdjacentHTML("beforeend", html);
+</script>
+</body>
+</html>
+ 
