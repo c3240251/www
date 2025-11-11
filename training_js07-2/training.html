@@ -4,21 +4,36 @@
 <meta charset="UTF-8">
 <title>写真の一覧</title>
 <style>
-   body {
-     font-family: "游ゴシック", sans-serif;
-     text-align: center;
-   }
-   #photo-area {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 10px;
-     margin-top: 20px;
-   }
-   #photo-area img {
-     width: 300px;
-     height: auto;
-   }
+
+  body {
+
+    font-family: "游ゴシック", sans-serif;
+
+    text-align: center;
+
+  }
+
+  #photo-area {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+  }
+
+  #photo-area img {
+
+    width: 300px;
+
+    height: auto;
+
+  }
 </style>
 </head>
 <body>
@@ -27,15 +42,25 @@
 <button id="show-btn">写真を表示</button>
 <div id="photo-area"></div>
 <script>
-   document.getElementById("show-btn").addEventListener("click", function() {
-     const photos = [
-       "photo_1.jpg", "photo_2.jpg", "photo_3.jpg", "photo_4.jpg",
-       "photo_5.jpg", "photo_6.jpg", "photo_7.jpg", "photo_8.jpg"
-     ];
-     const html = photos.map(src => `<img src="${src}">`).join("");
-     document.getElementById("photo-area").insertAdjacentHTML("beforeend",html);
-     this.remove();
-   });
+
+  document.getElementById("show-btn").addEventListener("click", function() {
+
+    const photos = [
+
+      "photo_1.jpg", "photo_2.jpg", "photo_3.jpg", "photo_4.jpg",
+
+      "photo_5.jpg", "photo_6.jpg", "photo_7.jpg", "photo_8.jpg"
+
+    ];
+
+    const html = photos.map(src => `<img src="${src}">`).join("");
+
+    document.getElementById("photo-area").insertAdjacentHTML("beforeend", html);
+
+    this.remove();
+
+  });
 </script>
 </body>
 </html>
+ 
