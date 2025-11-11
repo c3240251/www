@@ -28,17 +28,12 @@
 <div id="photo-area"></div>
 <script>
    document.getElementById("show-btn").addEventListener("click", function() {
-     const photoArea = document.getElementById("photo-area");
      const photos = [
        "photo_1.jpg", "photo_2.jpg", "photo_3.jpg", "photo_4.jpg",
        "photo_5.jpg", "photo_6.jpg", "photo_7.jpg", "photo_8.jpg"
      ];
-     photos.forEach(function(src) {
-       const img = document.createElement("img");
-       img.src = src;
-       photoArea.appendChild(img);
-     });
-     // ボタンを削除
+     const html = photos.map(scr => `<img scr="${scr}">`)
+     document.getElementById("photo-area").insertAdjacentHTML("beforebegin",html);
      this.remove();
    });
 </script>
