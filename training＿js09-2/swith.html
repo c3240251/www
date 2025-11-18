@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Click Counter ★ switch構文</title>
+<style>
+       body {
+           font-family: "Hiragino Sans", sans-serif;
+           background: #eef3ff;
+           padding: 40px;
+           text-align: center;
+       }
+       .card {
+           background: #fff;
+           width: 350px;
+           margin: 0 auto;
+           padding: 25px;
+           border-radius: 15px;
+           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+       }
+       #btn {
+           width: 80%;
+           padding: 12px;
+           font-size: 18px;
+           border: none;
+           border-radius: 30px;
+           background: linear-gradient(to right, #4B7BFF, #6C4BFF);
+           color: white;
+           cursor: pointer;
+           margin-top: 10px;
+       }
+       #result {
+           margin-top: 20px;
+           padding: 12px;
+           background: #f8f8f8;
+           border-radius: 10px;
+           min-height: 40px;
+       }
+</style>
+</head>
+<body>
+<h2>Click Counter ★ switch構文</h2>
+<div class="card">
+<p>クリック回数 <span id="count">0</span> 回</p>
+<button id="btn">クリック</button>
+<h3>結果</h3>
+<div id="result">ここに結果が表示されます</div>
+</div>
+<script>
+       let count = 0;
+       document.getElementById("btn").addEventListener("click", function() {
+           count++;
+           document.getElementById("count").textContent = count;
+           let result = "";
+           switch (count) {
+               case 1:
+                   result = "★";
+                   break;
+               case 2:
+                   result = "★★★★★";
+                   break;
+               case 3:
+                   result = "1 2 3 4 5";
+                   break;
+               case 4:
+                   result = "2 4 6 8 10";
+                   break;
+               case 5:
+                   let sum = 0;
+                   for (let i = 1; i <= count; i++) {
+                       sum += i;
+                   }
+                   result = `合計：${sum}`;
+                   break;
+               case 6:
+                   result = "クリアしました。カウントを0に戻します。";
+                   count = 0;
+                   document.getElementById("count").textContent = 0;
+                   break;
+               default:
+                   result = "";
+                   break;
+           }
+           document.getElementById("result").textContent = result;
+       });
+</script>
+</body>
+</html>
