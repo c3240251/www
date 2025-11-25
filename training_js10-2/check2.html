@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>10-2 Web制作II</title>
+<style>
+
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+        }
+
+        button {
+            padding: 6px 14px;
+            margin: 5px;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+</style>
+</head>
+<body>
+<h2>問題</h2>
+<p>次の方程式を満たす解を求めなさい。解は2つあります。</p>
+<h1>x² - 6x + 8 = 0</h1>
+<button onclick="check(1)">x = 1</button>
+<button onclick="check(2)">x = 2</button>
+<button onclick="check(3)">x = 3</button>
+<button onclick="check(4)">x = 4</button>
+<button onclick="check(5)">x = 5</button>
+<div id="result"></div>
+<script>
+
+function check(x) {
+
+    if (x === 2 || x === 4) {
+        document.getElementById("result").textContent = "正解！";
+    } else {
+        document.getElementById("result").textContent = "間違い！";
+    }
+
+}
+</script>
+</body>
+</html>
+ 
