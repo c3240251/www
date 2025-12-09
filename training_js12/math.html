@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>1〜10で割り切れる数字</title>
 </head>
 <body>
-<h1>1〜10で割り切れる数字</h1>
-<p>割り切れる最小の数値をJavaScriptで求めます。</p>
-<div id="result" style="background:#ffd3a0; padding:12px; width:220px;">
-   （計算中…）
+<h2>1〜10で割り切れる数字</h2>
+<p>1, 2, 3, 4, 5, 6, 7, 8, 9, 10で割り切れる最小の数値をJavaScriptで求めます。</p>
+<button onclick="calc()">結果を見る</button>
+<div id="answer" style="background:#f8cda5; padding:15px; width:200px; margin-top:20px;">
 </div>
 <script>
-   function isDivisibleBy1to10(n) {
-     for (let i = 1; i <= 10; i++) {
-       if (n % i !== 0) return false;
-     }
-     return true;
-   }
-   let answer = 1;
-   while (!isDivisibleBy1to10(answer)) {
-     answer++;
-   }
-   document.getElementById("result").textContent = "答えは" + answer + "です。";
+
+function calc() {
+
+  let num = 1;
+
+  while (true) {
+
+    let ok = true;
+
+    for (let i = 1; i <= 10; i++) {
+
+      if (num % i !== 0) {
+
+        ok = false;
+
+        break;
+
+      }
+
+    }
+
+    if (ok) break;
+
+    num++;
+
+  }
+
+  document.getElementById("answer").textContent = "答えは" + num + "です。";
+
+}
 </script>
 </body>
 </html>
+ 
