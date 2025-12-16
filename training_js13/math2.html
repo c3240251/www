@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>n〜mで割り切れる数字</title>
+<style>
+   body { font-family: sans-serif; }
+   .result {
+     margin-top: 20px;
+     padding: 10px;
+     background: #f6c28b;
+   }
+</style>
+</head>
+<body>
+<h1>n〜mで割り切れる数字</h1>
+<p>1〜10の好きな範囲で割り切れる最小の数値をJavaScriptで求めます。</p>
+<button onclick="calc()">範囲を指定</button>
+<div id="output" class="result">
+ ここに結果が表示されます。
+</div>
+<script>
+function calc() {
+ let n = parseInt(prompt("範囲の最小値を1〜10で入力してください"));
+ if (isNaN(n) || n < 1 || n > 10) return;
+ let m = parseInt(prompt("範囲の最大値を1〜10で入力してください"));
+ if (isNaN(m) || m < 1 || m > 10 || m < n) return;
+ let x = 1;
+ while (true) {
+   let ok = true;
+   for (let i = n; i <= m; i++) {
+     if (x % i !== 0) {
+       ok = false;
+       break;
+     }
+   }
+   if (ok) break;
+   x++;
+ }
+ document.getElementById("output").textContent =
+   n + "〜" + m + "で割り切れる最小の数値は" + x + "です。";
+}
+</script>
+</body>
+</html>
